@@ -1,7 +1,5 @@
 describe("ShouldSuccessfullyLogining", () => {
-  beforeEach(() => {
-    cy.viewport(1980, 1020);
-  });
+  beforeEach(() => {});
   it("Should successfully login", () => {
     cy.visit("/booksNode");
     cy.login("test@test.com", "test");
@@ -19,7 +17,7 @@ describe("ShouldSuccessfullyLogining", () => {
       .should("be.false");
     cy.get("#mail")
       .then(($el) => $el[0].validationMessage)
-      .should("contain", "Пожалуйста, заполните это поле.");
+      .should("contain", "Заполните это поле.");
   });
 
   it("Should not login with empty password", () => {
@@ -36,7 +34,6 @@ describe("ShouldSuccessfullyLogining", () => {
 describe("ShouldSuccessfullyAddAndDeleteBooksToFavourites", () => {
   beforeEach(() => {
     cy.logining();
-    cy.viewport(2556, 1179);
   });
   it("ShouldAddNewBookToFavoritesUseButtonAddToFavorite", () => {
     cy.get("#root > div > div > div > div > button").click();

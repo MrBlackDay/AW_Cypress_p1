@@ -4,11 +4,15 @@
   "description": "cypress test",
   "main": "index.js",
   "scripts": {
-    "e2e:chrome": "cypress run --browser chrome",
-    "e2e:edge": "cypress run --browser edge",
-    "e2e:firefox": "cypress run --browser firefox"
-    
-    
+    "cy:run:desktop_headed:chrome": "cypress run --config-file cypress-desktopHD.config.js --browser chrome --headed",
+    "cy:run:desktop_headless:chrome": "cypress run --config-file cypress-desktopHD.config.js --browser chrome --headless",
+    "cy:run:mobile_headless:chrome": "cypress run --config-file cypress-mobile-IPhone15Pro.config.js --browser edge --headless",
+    "cy:run:mobile2_headed:chrome": "cypress run --config-file cypress-mobile-IPhone15Pro.config.js --browser edge --headed",
+
+    "cy:run:desktop_headed:firefox": "cypress run --config-file cypress-desktopHD.config.js --browser firefox --headed",
+    "cy:run:desktop_headless:firefox": "cypress run --config-file cypress-desktopHD.config.js --browser firefox --headless",
+    "cy:run:mobile_headless:firefox": "cypress run --config-file cypress-mobile-IPhone15Pro.config.js --browser firefox --headless",
+    "cy:run:mobile2_headed:firefox": "cypress run --config-file cypress-mobile-IPhone15Pro.config.js --browser firefox --headed"
   },
   "keywords": [
     "cypress"
